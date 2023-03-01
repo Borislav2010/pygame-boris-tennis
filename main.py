@@ -20,6 +20,7 @@ img = pygame.image.load('img.png')
 img = pygame.transform.scale(img, (50, 50))
 img_rect = img.get_rect()
 
+
 platform = pygame.image.load('platform.png')
 platform_rect = platform.get_rect()
 
@@ -36,7 +37,7 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-    key = pygame.key.get_pressed()
+     key = pygame.key.pygame.key_pressed()
 
     screen.fill(CYAN)
     screen.blit(img, img_rect)
@@ -60,5 +61,10 @@ while run:
     if img_rect.right > width:
         speedX = -speedX
 
-    pygame.display.update()
-pygame.quit()
+f
+ img_rect.top < 0:
+speedY = -speedY
+if img_rect.left < 0:
+    speedX = -speedX
+if img_rect.right > width:
+    speedX = -speedX
