@@ -1,7 +1,7 @@
 import pygame # Импорт модуля пайгейм
 import random
 pygame.init()
-
+ping = pygame.mixer.Sound
 width = 1366
 height = 768
 fps = 60
@@ -17,7 +17,7 @@ BLUE = '#0000FF'
 CYAN = '#00FFFF'
 
 img = pygame.image.load('img.png')
-img = pygame.transform.scale(img, (50, 50))
+img = pygame.transform.scale(img, (60, 50))
 img_rect = img.get_rect()
 score = 0
 def draw_text(screen,text,size,x,y,color):
@@ -35,6 +35,7 @@ platform_rect.x = width / 2 - platform.get_width() / 2
 platform_rect.y = height - 60
 speedX = 10
 speedY = 10
+
 
 clock = pygame.time.Clock()
 run = True
@@ -60,12 +61,14 @@ while run:
     if img_rect.colliderect(platform_rect):
         speedY = -speedY
 
+
+
     if img_rect.top < 0:
-        speedY = -speedY
+    ping.play()
     if img_rect.left < 0:
-        speedX = -speedX
+    ping.play(0)
     if img_rect.right > width:
-        speedX = -speedX
+    ping.play()
 
     if img_rect.top < 0:
         speedY = -speedY
