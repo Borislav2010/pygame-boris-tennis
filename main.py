@@ -6,7 +6,9 @@ width = 1366
 height = 768
 fps = 60
 gameName = 'First Project'
-
+pygame.mixer.music.load('8bit.mp3')
+pygame.mixer.music.set_volume(0.1)
+pygame.mixer.music.play(-1)
 screen = pygame.display.set_mode((width, height)) # Создание экрана с заданными
 
 BLACK = '#000000'
@@ -61,14 +63,12 @@ while run:
     if img_rect.colliderect(platform_rect):
         speedY = -speedY
 
-
-
     if img_rect.top < 0:
-    ping.play()
+     ping.play()
     if img_rect.left < 0:
-    ping.play(0)
+     ping.play(0)
     if img_rect.right > width:
-    ping.play()
+     ping.play( )
 
     if img_rect.top < 0:
         speedY = -speedY
@@ -76,3 +76,5 @@ while run:
         speedX = -speedX
     if img_rect.right > width:
         speedX = -speedX
+
+
